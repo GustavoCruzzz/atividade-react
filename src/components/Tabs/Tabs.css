@@ -1,0 +1,72 @@
+.tabs__list {
+  display: flex;
+  gap: 0.25rem;
+  border-bottom: 1px solid var(--color-border);
+  /* Em telas pequenas, as abas rolam na horizontal em vez de quebrar o layout */
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.tabs__tab {
+  position: relative;
+  flex-shrink: 0;
+  padding: 0.75rem 1rem;
+  border: 0;
+  background: transparent;
+  color: var(--color-muted);
+  font: inherit;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 150ms ease;
+}
+
+.tabs__tab::after {
+  content: '';
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: -1px;
+  height: 3px;
+  border-radius: 3px 3px 0 0;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transition: transform 200ms var(--ease-out);
+}
+
+.tabs__tab:hover {
+  color: var(--color-text);
+}
+
+.tabs__tab[aria-selected='true'] {
+  color: var(--color-accent);
+}
+
+.tabs__tab[aria-selected='true']::after {
+  transform: scaleX(1);
+}
+
+.tabs__tab:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: -3px;
+  border-radius: 8px;
+}
+
+.tabs__panel {
+  padding: 1.25rem 0 0;
+  line-height: 1.65;
+  animation: tabs-fade-in 200ms var(--ease-out);
+}
+
+.tabs__panel:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+@keyframes tabs-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}

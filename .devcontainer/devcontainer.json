@@ -1,0 +1,24 @@
+{
+  "name": "Atividade React - Livraria Página Aberta",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "MS-CEINTL.vscode-language-pack-pt-BR",
+        "dbaeumer.vscode-eslint"
+      ],
+      "settings": {
+        "locale": "pt-br"
+      }
+    }
+  },
+  "forwardPorts": [5173],
+  "portsAttributes": {
+    "5173": {
+      "label": "Aplicação React (Vite)",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "postCreateCommand": "npm install",
+  "postAttachCommand": "npm run dev"
+}

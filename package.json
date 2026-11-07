@@ -1,0 +1,20 @@
+{
+  "name": "livraria-pagina-aberta",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Atividade ReactJS - UCSAL - Aplicação responsiva com 6 componentes visuais",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.4.0",
+    "vite": "^6.3.0"
+  }
+}
